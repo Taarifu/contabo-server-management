@@ -43,16 +43,11 @@ services:
       - db-tier
 
   pgadmin:
-    image: dpage/pgadmin4
+    image: adminer/latest
     container_name: shared-pgadmin
     restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     ports:
       - "5050:80"
-    volumes:
-      - ./pgadmin:/var/lib/pgadmin
     networks:
       - db-tier
 
