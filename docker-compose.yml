@@ -42,15 +42,6 @@ services:
     networks:
       - db-tier
 
-  pgadmin:
-    image: adminer:latest
-    container_name: shared-pgadmin
-    restart: always
-    ports:
-      - "5050:8080"
-    networks:
-      - db-tier
-
 networks:
   proxy-tier:
     external: true
